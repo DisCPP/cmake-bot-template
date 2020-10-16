@@ -4,14 +4,13 @@
 #include <discpp/client_config.h>
 
 int main(int argc, const char* argv[]) {
-	auto* config = new discpp::ClientConfig({"!"});
-	discpp::Client bot{ "TOKEN_HERE", config }; // Token, config
+    discpp::ClientConfig config({"!"}, 1., discpp::TokenType::BOT, discpp::logger_flags::DEBUG_SEVERITY);
+	discpp::Client client{ "TOKEN_HERE", config }; // Token, config
 
-	// I would recommend creating a class for the commands, you can check that in the examples folder
-	// But, you can still register a command like you did before
-	discpp::Command ping_command("ping", "Quick example of a command", {}, [](discpp::Context ctx) {
-		ctx.Send("pong!");
-	}, {});
+	// For more complex commands, create a separate command class.
+	client.command_handler->RegisterCommand<discpp::Command>("ping", "Quick ping command", [](discpp::Context ctx) {
+	    ctx.Send("pong!");
+	});
 
-	return bot.Run();
+	return client.Run();
 }
