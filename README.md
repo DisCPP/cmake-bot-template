@@ -2,6 +2,9 @@
 This is a template github repository for creating a simple DisC++ ping bot using CMake.
 The master branch is a template for the master DisC++ branch. Switch to the [development branch](https://github.com/DisCPP/cmake-bot-template/tree/development) to view a template for DisC++ development branch.
 
+## State
+DisCPP has been discontinued. Due to Discord's lack of communication and out-of-touch attitude towards library developers, this library is no longer being maintained. Recommended alternative is [DPP](https://github.com/brainboxdotcc/DPP).
+
 ## Compiling
 ### Windows:
 1. Install [vcpkg](https://github.com/microsoft/vcpkg) onto the root of your C drive.
